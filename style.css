@@ -1,0 +1,135 @@
+/* ====== Estilos Fase 2 ====== */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ====== Paleta do projeto (override Bootstrap) ====== */
+:root {
+
+    --bg: #F3F7FF;
+    /* background */
+    --primary: #2B57B5;
+    /* cor principal */
+    --accent: #FFBC2B;
+    /* cor de destaque */
+    --text: #0B1B3A;
+    /* texto principal (azul bem escuro) */
+    --muted: #324A86;
+    /* variação escura para links/menu */
+
+    /* Variáveis Bootstrap (afetam componentes) */
+    --bs-body-bg: var(--bg);
+    --bs-body-color: var(--text);
+    --bs-primary: var(--primary);
+    --bs-primary-rgb: 43, 87, 181;
+    --bs-warning: var(--accent);
+    --bs-warning-rgb: 255, 188, 43;
+    --bs-link-color: var(--primary);
+    --bs-link-hover-color: #1F3E84;
+    /* primary um pouco mais escuro */
+}
+
+/* ====== Navbar e cabeçalho ====== */
+.navbar.bg-light {
+    background-color: var(--bg) !important;
+    border-bottom: 1px solid rgba(var(--bs-primary-rgb), .15);
+}
+
+.navbar .navbar-brand {
+    color: var(--primary);
+}
+
+.navbar .nav-link {
+    color: var(--muted);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--primary);
+}
+
+/* ====== Botões ====== */
+.btn-primary {
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #E6A719;
+}
+
+/* ====== Cards de produto ====== */
+.card {
+    border-color: rgba(var(--bs-primary-rgb), .08);
+    overflow: hidden;
+
+}
+
+.card .fw-semibold {
+    color: var(--primary);
+}
+
+/* Tamanho consistente das imagens de produto (cards) */
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    /* altura uniforme */
+    object-fit: cover;
+    /* recorta mantendo foco visual */
+
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+/* ====== Carrossel ====== */
+.carousel .carousel-item img {
+    height: 320px;
+    object-fit: cover;
+}
+
+.h5 {
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+    .carousel .carousel-item img {
+        height: 420px;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--primary);
+}
+
+.carousel-caption {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+}
+
+/* ====== Acessibilidade ====== */
+.visually-hidden-focusable:active,
+.visually-hidden-focusable:focus {
+    position: static !important;
+    width: auto;
+    height: auto;
+    padding: .5rem .75rem;
+    margin: .5rem;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background: var(--primary);
+    color: #fff;
+    border-radius: .25rem;
+}
+
+:focus-visible {
+    outline: 2px dashed var(--primary);
+    outline-offset: 2px;
+}
